@@ -27,7 +27,7 @@ class Rfid_mifare
 		if uid_hex.length <= 7 #Añado este condicional para asegurarme de que el uid es de 8 dígitos
 			uid_hex = "0" + uid_hex
 		end
-		return uid_hex		
+		return uid_hex.upcase		
 	end
 end
 if __FILE__ == $0
@@ -35,6 +35,6 @@ if __FILE__ == $0
 	puts "Escanea tu targeta"
 	uid = rf.readUid
 	puts"Tu id es: "
-	puts uid.upcase
+	puts uid
 end
 
